@@ -4,32 +4,35 @@ public class Main {
 
 
     public static void main(String[] args) {
-       // Rect rect1 = new Rect(4, 8);
-       // Rect rect2 = new Rect(4, 8);
-       // Circle circle1 = new Circle(2);
+        Rect rect1 = new Rect(4, 8);
+        Rect rect2 = new Rect(6, 12);
+        rect1.setCenter(2,4);
+        rect2.setCenter(4,6);
+        Circle circle1 = new Circle(2, 0);
         Triangle tri1 = new Triangle(0, 0,3,0,3,3);
         tri1.printArea();
         tri1.pointWithin(2,3);
         tri1.pointPrint();
         tri1.getCenter();
-       /* rect1.printCenter(2,4);
-        rect2.printCenter(2,4);
         rect1.getArea();
         rect1.getCirc();
         rect1.pointWithin(4,4);
         rect1.pointPrint();
-        euclidDistance(rect1.x, rect1.y, rect2.x, rect2.y);*/
+        euclidDistance(rect1.x, rect1.y, rect2.x, rect2.y);
+        System.out.println("The distance between the centers of the two shapes is " + euclidDistance(rect1.x, rect1.y, rect2.x, rect2.y));
 
     }
     //a method that euclidean.
-    static void euclidDistance(int shape1x, int shape1y, int shape2x, int shape2y) {
+    static int euclidDistance(int shape1x, int shape1y, int shape2x, int shape2y) {
         int x1 = shape1x;
         int y1 = shape1y;
         int x2 = shape2x;
         int y2 = shape2y;
         // calculate the distance between the two points.
         int dist = (int) Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
-        System.out.println("The distance between the centers of the two shapes is " + dist);
+        //System.out.println("The distance between the centers of the two shapes is " + dist);
+        return dist;
+
     }
 }
 
